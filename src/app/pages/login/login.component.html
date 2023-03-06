@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div>
+    <form [formGroup]="form" (submit)="submit()">
+        <div>
+            username:
+            <mat-form-field>
+                <input matInput type="text" placeholder="inserisci il tuo username" 
+                    formControlName="username">
+            </mat-form-field>
+            password:
+            <mat-form-field>
+                <input matInput type="password" placeholder="inserisci la tua password" 
+                    formControlName="password">
+            </mat-form-field>
+            <button type="submit" class="btn btn-primary" >Login</button>
+        </div>
+    </form>
+</div>
