@@ -1,3 +1,4 @@
 <div>
-    <img [src]="utente.image" alt="">
+    <!-- se smallImg è true mostro l'immagine piccola -->
+    <img [src]="src" alt="" [ngClass]="smallImg ? 'small-img':''" >
 </div>

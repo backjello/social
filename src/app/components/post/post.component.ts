@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Post } from 'src/app/interface/post';
+import { Utente } from 'src/app/interface/utente';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-post',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  @Input() post!: Post // tutti i dati del post
+  // immmagine e username utente
+  img!:string
+  username!:string
 
+  constructor(private api:ApiService) { 
+  }
+  
   ngOnInit(): void {
+    this.api.getUtente( this.post.userId ).subscribe((res:Utente)=>{
+      this.img = res.image
+      this.username = res.username
+    })
   }
 
 }

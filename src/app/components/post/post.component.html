@@ -1,1 +1,22 @@
-<p>post works!</p>
+<div>
+    <app-headerpost
+        [img]="img"
+        [username]="username"
+        [id]="post.userId"
+    ></app-headerpost>
+    <!-- titolo post -->
+    <div>{{post.title}}</div>
+    <!-- body post -->
+    <div>{{post.body}}</div>
+    <!-- tag post -->
+    <app-posttag
+        [post]="post"
+    ></app-posttag>
+    <app-reactions
+        [post]="post"
+    ></app-reactions>
+    <app-bottonecommenti
+        [post]="post"
+    >
+    </app-bottonecommenti>
+</div>

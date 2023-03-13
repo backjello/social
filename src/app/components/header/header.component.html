@@ -1,1 +1,9 @@
-<app-fotoprofilo></app-fotoprofilo>
+<div class="p-2">
+    <app-intestazione
+        [nome]="utente.username"
+        [img]="utente.image"
+        [id]="utente.id"
+    >
+    <!-- passo le tre proprietà di input a intestazione -->
+    </app-intestazione>
+</div>

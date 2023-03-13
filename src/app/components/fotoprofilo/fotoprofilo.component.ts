@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Utente } from 'src/app/interface/utente';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
 
@@ -7,15 +7,12 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
   templateUrl: './fotoprofilo.component.html',
   styleUrls: ['./fotoprofilo.component.css']
 })
-export class FotoprofiloComponent implements OnInit {
+export class FotoprofiloComponent{
 
-  utente! : Utente
+  @Input() src! :string // url dell'immagine della foto profilo utente
+  @Input() smallImg:boolean = false
 
-  constructor(private storage:LocalstorageService) { 
-    this.utente = this.storage.leggiDati('datiUtente') // leggo i dati dell'utente dal localstorage
-  }
-
-  ngOnInit(): void {
+  constructor() { 
   }
 
 }

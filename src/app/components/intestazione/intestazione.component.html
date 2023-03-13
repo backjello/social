@@ -1,0 +1,10 @@
+<!-- al click si andrà alla pagina del proprio profilo -->
+<!-- il routerLink dovrà essere /profilo/idUtente (dove l'IDutente sarà un numero (es: 4, 15, 29 ...)) -->
+<app-fotoprofilo 
+    [routerLink]="'/profilo/'+id" 
+    [src]="img" 
+    [smallImg]="smallImg"
+    class="mr-4 cambia-cursore" 
+    >
+</app-fotoprofilo>
+<span [routerLink]="'/profilo/'+id" class="cambia-cursore" >{{ nome }}</span>

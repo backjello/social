@@ -1,0 +1,9 @@
+<div>
+    {{reactions}}
+    <button class="btn btn-danger" (click)="lasciaLike()" >
+        <!-- mostro il cuore vuoto se NON è stato fatto click -->
+        <i class="bi bi-heart"      *ngIf="!likeLasciato"></i>
+        <!-- mostro il cuore pieno se è stato fatto click -->
+        <i class="bi bi-heart-fill" *ngIf="likeLasciato"></i>
+    </button>
+</div>

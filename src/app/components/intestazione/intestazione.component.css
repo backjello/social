@@ -1,0 +1,8 @@
+span {
+    font-weight: bold;
+    color: deepskyblue;
+    /* background-color: deepskyblue; */
+}
+.cambia-cursore{
+    cursor: pointer;
+}

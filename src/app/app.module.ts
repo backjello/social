@@ -19,7 +19,14 @@ import { FotoprofiloComponent } from './components/fotoprofilo/fotoprofilo.compo
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input'
+import {MatInputModule} from '@angular/material/input';
+import { IntestazioneComponent } from './components/intestazione/intestazione.component';
+import { PosttagComponent } from './components/posttag/posttag.component';
+import { ReactionsComponent } from './components/reactions/reactions.component';
+import { BottonecommentiComponent } from './components/bottonecommenti/bottonecommenti.component';
+import { PopupcommentiComponent } from './components/popupcommenti/popupcommenti.component'
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,9 +41,15 @@ import {MatInputModule} from '@angular/material/input'
     HeaderpostComponent,
     CommentoComponent,
     CorpopostComponent,
-    FotoprofiloComponent
+    FotoprofiloComponent,
+    IntestazioneComponent,
+    PosttagComponent,
+    ReactionsComponent,
+    BottonecommentiComponent,
+    PopupcommentiComponent
   ],
   imports: [
+    MatDialogModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

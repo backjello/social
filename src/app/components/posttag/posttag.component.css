@@ -1,0 +1,8 @@
+.tag{
+    font-weight: bold;
+    color:deepskyblue;
+    cursor: pointer;
+}
+.tag:hover{
+    text-decoration: underline;
+}

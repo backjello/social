@@ -1,0 +1,10 @@
+<div matDialogContent>
+    <!-- {{post.comments?.length > 0 ? 'Commenti Post' : 'Non ci sono commenti in quest Post'}} -->
+    <app-commento *ngFor="let commento of post.comments">
+    </app-commento>
+</div>
+<div matDialogActions >
+    <button (click)="chiudi()" class="btn btn-primary" >
+        Chiudi
+    </button>
+</div>
