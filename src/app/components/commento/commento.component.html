@@ -1,1 +1,11 @@
-<p>commento works!</p>
+<div>
+    <app-intestazione
+        [img]="image"
+        [id]="commento.user.id"
+        [nome]="commento.user.username"
+        [smallImg]="true"
+    ></app-intestazione>
+    <div>
+        {{ commento.body }}
+    </div>
+</div>

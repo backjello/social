@@ -27,6 +27,7 @@ import { BottonecommentiComponent } from './components/bottonecommenti/bottoneco
 import { PopupcommentiComponent } from './components/popupcommenti/popupcommenti.component'
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { IntestazioneprofiloComponent } from './components/intestazioneprofilo/intestazioneprofilo.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     PosttagComponent,
     ReactionsComponent,
     BottonecommentiComponent,
-    PopupcommentiComponent
+    PopupcommentiComponent,
+    IntestazioneprofiloComponent
   ],
   imports: [
     MatDialogModule,

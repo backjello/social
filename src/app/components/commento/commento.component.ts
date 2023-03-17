@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Commento } from 'src/app/interface/commento';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-commento',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentoComponent implements OnInit {
 
-  constructor() { }
+  @Input() commento!: Commento
+  image!: string
+
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
+    this.api.getUtente(this.commento.user.id).subscribe((res) => {
+      this.image = res.image
+    })
   }
 
 }

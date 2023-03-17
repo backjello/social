@@ -1,10 +1,18 @@
 <div matDialogContent>
     <!-- {{post.comments?.length > 0 ? 'Commenti Post' : 'Non ci sono commenti in quest Post'}} -->
-    <app-commento *ngFor="let commento of post.comments">
+    <app-commento *ngFor="let commento of post.comments"
+        [commento]="commento"
+    >
     </app-commento>
+    <mat-form-field>
+        <input matInput type="text" placeholder="commento..." [(ngModel)] = "testoCommento" >
+    </mat-form-field>
 </div>
 <div matDialogActions >
     <button (click)="chiudi()" class="btn btn-primary" >
         Chiudi
+    </button>
+    <button class="btn btn-success" (click)="aggiungiCommento()">
+        Aggiungi commento
     </button>
 </div>

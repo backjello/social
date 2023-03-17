@@ -1,1 +1,6 @@
-<p>profilo works!</p>
+<app-intestazioneprofilo [utente]="utente" ></app-intestazioneprofilo>
+
+<div>
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+</div>
+

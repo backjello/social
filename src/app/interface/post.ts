@@ -6,6 +6,6 @@ export interface Post {
     title:string,
     tags:string[],
     reactions:number, // sono i like
-    userId:number
+    userId:number,
     comments?: Commento[] // non necessariamente un post ha dei commenti, quindi è opzionale
 }

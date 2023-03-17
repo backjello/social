@@ -1,3 +1,36 @@
 <app-post *ngFor="let post of posts" [post]="post">
 <!-- nella variabile post abbiamo il singolo post -->
 </app-post>
+
+<!-- caricamento dei post che vengono accodati ai post già presenti -->
+<div *ngIf="metodoCaricamento == 1">
+    <button class="btn btn-warning" (click)="mostraAltriPost()" *ngIf="!finiti">
+        Mostra altri post
+    </button>
+    
+    <span *ngIf="finiti" class="text-disabled">
+        Non ci sono più post
+    </span>
+</div>
+<!-- carico i post come se fossero delle pagine (30 alla volta, quando carico i successivi
+    30 cancello i 30 che sto mostrando adesso) -->
+<div *ngIf="metodoCaricamento == 2">
+    <!-- se sono alla pagina prima non posso tornare indietro -->
+    <button class="btn btn-warning" (click)="mostraAltriPost('-')" [disabled]="pagina == 0">
+        Indietro
+    </button>
+    <!--
+        numero di pagina 
+        <span *ngIf="totalePost != 0">
+        {{ pagina + 1  }} di {{ totalePost / 30}}
+    </span> -->
+    <button *ngFor="let pag of nPagine" class="btn btn-warning" [disabled]="pag == pagina+1"
+        (click)="cambiaPagina(pag)">
+        {{ pag }}
+    </button>
+    <button class="btn btn-warning" (click)="mostraAltriPost('+')" [disabled]="(pagina+1) * 30 == totalePost">
+        Avanti
+    </button>
+</div>
+
+

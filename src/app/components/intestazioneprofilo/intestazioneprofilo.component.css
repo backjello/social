@@ -1,0 +1,7 @@
+/* 
+    con ::ng-deep modifico lo stile di un elemento all'interno di un componente
+    CALDAMENTE SCONSIGLIATO L'USO
+ */
+.immagine ::ng-deep img{
+    width: 100px;
+}

@@ -7,14 +7,17 @@ import { Post } from 'src/app/interface/post';
   templateUrl: './popupcommenti.component.html',
   styleUrls: ['./popupcommenti.component.css']
 })
-export class PopupcommentiComponent implements OnInit {
+export class PopupcommentiComponent{
+  
+  testoCommento:string = ""
 
   constructor(
     private dialogRef: MatDialogRef<PopupcommentiComponent>, // il riferimento alla modal
     @Inject(MAT_DIALOG_DATA) public post:Post // sono i dati che passo alla modal (o popup)
-  ) { }
+    ) { }
+    
+  aggiungiCommento() {
 
-  ngOnInit(): void {
   }
 
   chiudi(){

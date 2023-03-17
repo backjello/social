@@ -16,8 +16,12 @@ export class ApiService {
     return this.http.get<any>(this.API_URL + 'comments/post/' + post.id)
   }
 
-  getPosts(){
-    return this.http.get<any>(this.API_URL + 'posts')
+  getPosts(start:number = 0){
+    return this.http.get<any>(this.API_URL + 'posts', {
+      params:{ // parametri get
+        skip: start
+      }
+    })
   }
 
   setLike(post:Post): Observable<any> { // passiamo tutti i dati del post al quale vogliamo mettere like
@@ -27,8 +31,12 @@ export class ApiService {
     )
   }
 
-  getUtente(id: number): Observable<any> {
+  getUtente(id: number | string): Observable<any> {
     return this.http.get<any>(this.API_URL + 'user/' + id)
+  }
+
+  getPostByIDutente(userID:number | string){
+    return this.http.get<any>(this.API_URL + 'posts/user/' + userID)
   }
 
   login(username: string, password: string): Observable<any> {
