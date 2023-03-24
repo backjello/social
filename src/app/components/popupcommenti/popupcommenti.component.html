@@ -5,14 +5,16 @@
     >
     </app-commento>
     <mat-form-field>
+        <!-- il valore dell'input e di testocommento sono sempre collegati e hanno lo stesso valore (two-way-binding) -->
         <input matInput type="text" placeholder="commento..." [(ngModel)] = "testoCommento" >
     </mat-form-field>
 </div>
 <div matDialogActions >
-    <button (click)="chiudi()" class="btn btn-primary" >
+    <button (click)="chiudi()" class="btn btn-primary"  >
         Chiudi
     </button>
-    <button class="btn btn-success" (click)="aggiungiCommento()">
-        Aggiungi commento
+    <button class="btn btn-success" (click)="aggiungiCommento()" 
+        [disabled]="testoCommento == ''">
+            Aggiungi commento
     </button>
 </div>

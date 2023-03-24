@@ -28,6 +28,8 @@ import { PopupcommentiComponent } from './components/popupcommenti/popupcommenti
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { IntestazioneprofiloComponent } from './components/intestazioneprofilo/intestazioneprofilo.component';
+import { PopupNuovoPostComponent } from './components/popup-nuovo-post/popup-nuovo-post.component';
+import { PaginaPostComponent } from './pages/pagina-post/pagina-post.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { IntestazioneprofiloComponent } from './components/intestazioneprofilo/i
     ReactionsComponent,
     BottonecommentiComponent,
     PopupcommentiComponent,
-    IntestazioneprofiloComponent
+    IntestazioneprofiloComponent,
+    PopupNuovoPostComponent,
+    PaginaPostComponent
   ],
   imports: [
     MatDialogModule,

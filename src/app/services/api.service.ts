@@ -24,6 +24,10 @@ export class ApiService {
     })
   }
 
+  deletePost(postID:number){
+    return this.http.delete( this.API_URL + 'posts/' + postID )
+  }
+
   setLike(post:Post): Observable<any> { // passiamo tutti i dati del post al quale vogliamo mettere like
     return this.http.put(
       this.API_URL + 'posts/' + post.id, //endpoint 
@@ -37,6 +41,27 @@ export class ApiService {
 
   getPostByIDutente(userID:number | string){
     return this.http.get<any>(this.API_URL + 'posts/user/' + userID)
+  }
+
+  getSinglePost(postID:number | string){
+    return this.http.get<any>(this.API_URL + 'posts/' + postID)
+  }
+
+  addComment(userID:number ,postID:number, bodyComment:string ){
+    return this.http.post(this.API_URL + 'comments/add',{
+      userId: userID,
+      postId: postID,
+      body:   bodyComment
+    })
+  }
+
+  addPost(titolo:string,body:string,tags:string[],userID:number){
+    return this.http.post(this.API_URL + 'posts/add', {
+      title:titolo,
+      body:body,
+      tags:tags,
+      userId:userID
+    })
   }
 
   login(username: string, password: string): Observable<any> {

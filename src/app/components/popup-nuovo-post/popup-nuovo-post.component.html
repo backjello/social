@@ -1,0 +1,46 @@
+<div matDialogTitle>
+    <h1>Nuovo Post</h1>
+</div>
+<div matDialogContent>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <input matInput type="text" placeholder="inserisci un titolo" 
+                formControlName="titolo" >
+            <mat-error>
+                Inserisci il titolo
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="text" placeholder="inserisci il corpo del post" 
+                formControlName="body" >
+            <mat-error>
+                <span *ngIf="bodyInput['required']">Inserisci il corpo del post</span>
+                <span *ngIf="bodyInput['maxlength']">
+                     Il corpo del post può essere lungo massimo 100 caratteri.
+                     Hai scritto {{ bodyInput['maxlength'].actualLength }} caratteri.
+                </span>
+                <span *ngIf="bodyInput['minlength']"> 
+                    Il corpo del post deve essere lungo almeno 10 caratteri.
+                    Hai scritto solo {{ bodyInput['minlength'].actualLength }} caratteri.
+                </span>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <!-- gestione dei tag -->
+        <mat-form-field>
+            <input matInput type="text" placeholder="inserisci i tags" 
+                formControlName="tags" >
+        </mat-form-field>     
+        <!-- i tag saranno separati da virgola e verranno trasformati 
+            in array tramite apposita funzione -->
+    </form>
+</div>
+<div matDialogActions>
+    <button class="btn btn-primary" (click)="pubblicaPost()" [disabled]="!form.valid">
+        Pubblica
+    </button>
+    <button class="btn btn-danger" (click)="chiudi()">
+        Annulla
+    </button>
+</div>

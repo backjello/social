@@ -1,0 +1,4 @@
+<div *ngIf="post != undefined">
+    <app-post [post]="post"></app-post>
+    <app-commento *ngFor="let com of post.comments" [commento]="com"></app-commento>
+</div>
