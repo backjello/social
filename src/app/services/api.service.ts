@@ -24,6 +24,7 @@ export class ApiService {
     })
   }
 
+  
   deletePost(postID:number){
     return this.http.delete( this.API_URL + 'posts/' + postID )
   }
@@ -32,38 +33,46 @@ export class ApiService {
     return this.http.put(
       this.API_URL + 'posts/' + post.id, //endpoint 
       { reactions: post.reactions } // body della richiesta
-    )
-  }
+      )
+    }
+    
+    getUtente(id: number | string): Observable<any> {
+      return this.http.get<any>(this.API_URL + 'user/' + id)
+    }
+    
+    getPostByIDutente(userID:number | string){
+      return this.http.get<any>(this.API_URL + 'posts/user/' + userID)
+    }
+    
+    getSinglePost(postID:number | string){
+      return this.http.get<any>(this.API_URL + 'posts/' + postID)
+    }
+    
+    addComment(userID:number ,postID:number, bodyComment:string ){
+      return this.http.post(this.API_URL + 'comments/add',{
+        userId: userID,
+        postId: postID,
+        body:   bodyComment
+      })
+    }
+    
+    addPost(titolo:string,body:string,tags:string[],userID:number){
+      return this.http.post(this.API_URL + 'posts/add', {
+        title:titolo,
+        body:body,
+        tags:tags,
+        userId:userID
+      })
+    }
 
-  getUtente(id: number | string): Observable<any> {
-    return this.http.get<any>(this.API_URL + 'user/' + id)
-  }
-
-  getPostByIDutente(userID:number | string){
-    return this.http.get<any>(this.API_URL + 'posts/user/' + userID)
-  }
-
-  getSinglePost(postID:number | string){
-    return this.http.get<any>(this.API_URL + 'posts/' + postID)
-  }
-
-  addComment(userID:number ,postID:number, bodyComment:string ){
-    return this.http.post(this.API_URL + 'comments/add',{
-      userId: userID,
-      postId: postID,
-      body:   bodyComment
-    })
-  }
-
-  addPost(titolo:string,body:string,tags:string[],userID:number){
-    return this.http.post(this.API_URL + 'posts/add', {
-      title:titolo,
-      body:body,
-      tags:tags,
-      userId:userID
-    })
-  }
-
+    updatePost(postID:number | string,titolo:string,body:string,tags:string[]){
+      return this.http.put(this.API_URL + 'posts/' + postID,{
+        title:titolo,
+        body:body,
+        tags:tags,
+      })
+    }
+    
   login(username: string, password: string): Observable<any> {
     return this.http.post(this.API_URL + "auth/login", {
       username: username,

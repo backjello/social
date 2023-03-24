@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Post } from 'src/app/interface/post';
 import { Utente } from 'src/app/interface/utente';
 import { ApiService } from 'src/app/services/api.service';
@@ -10,10 +10,14 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class PostComponent implements OnInit {
 
+  @Input() indice!:number // indice del post nell'array posts del componente padre
+
   @Input() post!: Post // tutti i dati del post
   // immmagine e username utente
   img!:string
   username!:string
+
+  @Output() postEliminato : EventEmitter<number> = new EventEmitter()
 
   constructor(private api:ApiService) { 
   }
@@ -23,6 +27,10 @@ export class PostComponent implements OnInit {
       this.img = res.image
       this.username = res.username
     })
+  }
+
+  elimina(){
+    this.postEliminato.emit(this.indice)
   }
 
 }

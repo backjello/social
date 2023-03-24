@@ -10,10 +10,13 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./profilo.component.css']
 })
 export class ProfiloComponent {
-
+  
   utente!:Utente
   posts: Post[] = []
-
+  
+  elimina(indice: number) {
+    this.posts.splice(indice,1)
+  }
   constructor(private api:ApiService, private route:ActivatedRoute) {
     //devo prendere l'id utente dai parametri del router
     const IDutente = this.route.snapshot.paramMap.get('id')

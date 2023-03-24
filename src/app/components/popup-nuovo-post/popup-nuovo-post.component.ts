@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Post } from 'src/app/interface/post';
 import { ApiService } from 'src/app/services/api.service';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
 
@@ -15,14 +16,18 @@ export class PopupNuovoPostComponent {
 
   constructor(
     private dialog: MatDialogRef<PopupNuovoPostComponent>,
+    @Inject(MAT_DIALOG_DATA) private data:{
+      post:Post,
+      action:'new'|'update'|'delete'
+    },
     private fb: FormBuilder,
     private api:ApiService,
     private storage:LocalstorageService
   ) {
     this.form = this.fb.group({
-      titolo: ['', Validators.required],
-      body: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(10)]],
-      tags: ['']
+      titolo: [this.data.post?.title, Validators.required],
+      body: [this.data.post?.body, [Validators.required, Validators.maxLength(1000), Validators.minLength(10)]],
+      tags: [this.data.post?.tags.toString()] // trasformo array in string ["film","oscar","2023"] -> "film,oscar,2023"
     })
     console.log(this.form.controls['body'].errors) // {required:true,...}
   }
@@ -39,10 +44,16 @@ export class PopupNuovoPostComponent {
     var titolo = this.form.value.titolo
     var body = this.form.value.body
     var userID = this.storage.leggiUtente().id
-    this.api.addPost(titolo,body,tags,userID).subscribe((res)=>{
-      console.log(res)
-      this.dialog.close()
-    })
+    if(this.data.action == 'new')
+      this.api.addPost(titolo,body,tags,userID).subscribe((res)=>{
+        console.log(res)
+        this.dialog.close()
+      })
+    else if(this.data.action == 'update'){
+      this.api.updatePost(this.data.post.id,titolo,body,tags).subscribe((res)=>{
+        this.dialog.close(res)
+      })
+    }
   }
 
   chiudi() {

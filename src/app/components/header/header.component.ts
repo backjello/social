@@ -19,7 +19,10 @@ export class HeaderComponent {
   nuovoPost(){
     // apro la modal (o popup) per inserire un nuovo post
     this.dialog.open(PopupNuovoPostComponent,{
-      minWidth:"500px"
+      minWidth:"500px",
+      data:{
+        action:'new'
+      }
     })
   }
 

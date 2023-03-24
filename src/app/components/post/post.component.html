@@ -3,7 +3,10 @@
         [img]="img"
         [username]="username"
         [id]="post.userId"
+        [indice]="indice"
         [postID]="post.id"
+        [post]="post"
+        (postEliminato)="elimina()"
     ></app-headerpost>
     <!-- titolo post -->
     <div>{{post.title}}</div>
