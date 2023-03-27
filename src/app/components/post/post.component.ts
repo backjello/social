@@ -9,31 +9,34 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  
-  @Input() indice!:number // indice del post nell'array posts del componente padre
+
+  @Input() indice!: number // indice del post nell'array posts del componente padre
 
   @Input() post!: Post // tutti i dati del post
   // immmagine e username utente
-  img!:string
-  username!:string
+  img!: string
+  username!: string
 
-  @Output() postEliminato : EventEmitter<number> = new EventEmitter()
+  @Output() postEliminato: EventEmitter<number> = new EventEmitter()
+  @Output() postModificato: EventEmitter<Post> = new EventEmitter()
 
-  constructor(private api:ApiService) { 
+  constructor(private api: ApiService) {
   }
-  
+
   ngOnInit(): void {
-    this.api.getUtente( this.post.userId ).subscribe((res:Utente)=>{
+    this.api.getUtente(this.post.userId).subscribe((res: Utente) => {
       this.img = res.image
       this.username = res.username
     })
   }
-  
-  elimina(){
+
+  elimina() {
     this.postEliminato.emit(this.indice)
   }
-  modifica(post:Post) {
-   this.postModificato.emit(post) 
-  }
   
+  modifica(post: Post) {
+    console.log(post);
+    this.postModificato.emit(post)
+  }
+
 }

@@ -80,9 +80,8 @@ export class HeaderpostComponent {
       // soluzione #2
       this.postModificato.emit(res) //passo al padre il post aggiornato
 
-
       // soluzione #3
-
+      
 
 
     })

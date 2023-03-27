@@ -7,7 +7,7 @@
         [postID]="post.id"
         [post]="post"
         (postEliminato)="elimina()"
-        (postModificato)="modifica()"
+        (postModificato)="modifica($event)"
     ></app-headerpost>
     <!-- titolo post -->
     <div>{{post.title}}</div>

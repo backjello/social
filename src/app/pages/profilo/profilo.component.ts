@@ -17,6 +17,10 @@ export class ProfiloComponent {
   elimina(indice: number) {
     this.posts.splice(indice,1)
   }
+  modifica(post:Post,indice:number){
+    this.posts[indice]= post 
+  }
+
   constructor(private api:ApiService, private route:ActivatedRoute) {
     //devo prendere l'id utente dai parametri del router
     const IDutente = this.route.snapshot.paramMap.get('id')
