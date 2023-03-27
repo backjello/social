@@ -1,0 +1,14 @@
+<form style="display: inline" class="ml-4" name="form" >
+    <mat-form-field>
+        <input [(ngModel)]="value" name="testo" matInput type="text" placeholder="Cerca..."
+            [matAutocomplete]="auto">
+        <i matSuffix class="bi bi-search" (click)="ricerca()"></i>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of cronologia" [value]="option" 
+                (click)="ricerca()">
+              {{option}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
+

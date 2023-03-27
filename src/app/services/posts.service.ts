@@ -14,6 +14,10 @@ export class PostsService {
     this.allPosts.splice(indice,1)
   }
 
+  modifica(indice:number,post:Post){
+    this.allPosts[indice] = post
+  }
+
   get posts(){ // ritorna tutti i post
     return this.allPosts
   }

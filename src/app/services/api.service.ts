@@ -47,6 +47,14 @@ export class ApiService {
     getSinglePost(postID:number | string){
       return this.http.get<any>(this.API_URL + 'posts/' + postID)
     }
+
+    ricercaPost(testoRicerca:string){
+      return this.http.get<any>(this.API_URL + 'posts/search',{
+        params:{
+          q:testoRicerca
+        }
+      })
+    }
     
     addComment(userID:number ,postID:number, bodyComment:string ){
       return this.http.post(this.API_URL + 'comments/add',{

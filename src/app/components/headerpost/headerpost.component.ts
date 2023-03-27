@@ -77,12 +77,11 @@ export class HeaderpostComponent {
       console.log(res)
       // window.location.reload() //soluzione #1 aggiorno la pagina
 
-      // soluzione #2
+      // soluzione #2 tramite output(funziona nella pagina profilo)
       this.postModificato.emit(res) //passo al padre il post aggiornato
 
-      // soluzione #3
-      
-
+      // soluzione #3 tramite servizio (funziona nella home) 
+      this.postsService.modifica(this.indice,res)
 
     })
   }

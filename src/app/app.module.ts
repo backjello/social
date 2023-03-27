@@ -30,6 +30,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { IntestazioneprofiloComponent } from './components/intestazioneprofilo/intestazioneprofilo.component';
 import { PopupNuovoPostComponent } from './components/popup-nuovo-post/popup-nuovo-post.component';
 import { PaginaPostComponent } from './pages/pagina-post/pagina-post.component';
+import { BarraricercaComponent } from './components/barraricerca/barraricerca.component';
+
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { EvidenziaricercaDirective } from './directives/evidenziaricerca.directive';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,9 @@ import { PaginaPostComponent } from './pages/pagina-post/pagina-post.component';
     PopupcommentiComponent,
     IntestazioneprofiloComponent,
     PopupNuovoPostComponent,
-    PaginaPostComponent
+    PaginaPostComponent,
+    BarraricercaComponent,
+    EvidenziaricercaDirective
   ],
   imports: [
     MatDialogModule,
@@ -63,7 +69,8 @@ import { PaginaPostComponent } from './pages/pagina-post/pagina-post.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
