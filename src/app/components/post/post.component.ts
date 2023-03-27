@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-
+  
   @Input() indice!:number // indice del post nell'array posts del componente padre
 
   @Input() post!: Post // tutti i dati del post
@@ -28,9 +28,12 @@ export class PostComponent implements OnInit {
       this.username = res.username
     })
   }
-
+  
   elimina(){
     this.postEliminato.emit(this.indice)
   }
-
+  modifica(post:Post) {
+   this.postModificato.emit(post) 
+  }
+  
 }

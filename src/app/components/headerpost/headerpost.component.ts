@@ -26,6 +26,8 @@ export class HeaderpostComponent {
   @Input() post!:Post // tutti i dati del post
 
   @Output() postEliminato: EventEmitter<any> = new EventEmitter()
+  @Output() postModificato: EventEmitter<any> = new EventEmitter()
+
 
   userID! : number
   
@@ -73,6 +75,16 @@ export class HeaderpostComponent {
       // codice che si attiva solo alla chiusura della modal
       if( res == undefined ) return
       console.log(res)
+      // window.location.reload() //soluzione #1 aggiorno la pagina
+
+      // soluzione #2
+      this.postModificato.emit(res) //passo al padre il post aggiornato
+
+
+      // soluzione #3
+
+
+
     })
   }
 
