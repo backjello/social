@@ -1,0 +1,22 @@
+<div class="main" matDialogContent>
+    <button class="btn btn-success" (click)="condividi('whatsapp')">
+        <i class="bi bi-whatsapp"></i>
+    </button>
+    <button class="btn btn-primary" (click)="condividi('facebook')">
+        <i class="bi bi-facebook"></i>
+    </button>
+    <button class="btn btn-info" (click)="condividi('twitter')">
+        <i class="bi bi-twitter"></i>
+    </button>
+    <button class="btn btn-warning" (click)="condividi('copy')"> <!-- copia il link -->
+        <i class="bi bi-clipboard"></i>
+    </button>
+    <button class="btn btn-danger" (click)="condividi('mail')">
+        <i class="bi bi-envelope"></i>
+    </button>
+</div>
+<div matDialogActions>
+    <button (click)="chiudi()">
+        Chiudi
+    </button>
+</div>

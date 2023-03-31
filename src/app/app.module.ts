@@ -35,6 +35,10 @@ import { BarraricercaComponent } from './components/barraricerca/barraricerca.co
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { EvidenziaricercaDirective } from './directives/evidenziaricerca.directive';
 import { RiducitestoPipe } from './pipes/riducitesto.pipe';
+import { CondividiComponent } from './components/condividi/condividi.component';
+import { PopupcondivisioneComponent } from './components/popupcondivisione/popupcondivisione.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -60,9 +64,12 @@ import { RiducitestoPipe } from './pipes/riducitesto.pipe';
     PaginaPostComponent,
     BarraricercaComponent,
     EvidenziaricercaDirective,
-    RiducitestoPipe
+    RiducitestoPipe,
+    CondividiComponent,
+    PopupcondivisioneComponent
   ],
   imports: [
+    MatMenuModule,
     MatDialogModule,
     HttpClientModule,
     BrowserModule,

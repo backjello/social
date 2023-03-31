@@ -10,4 +10,17 @@
         Nuovo Post
     </button>
     <app-barraricerca></app-barraricerca>
+    <mat-menu #menu="matMenu" >
+        <div (click)="logout()">
+            <i class="bi bi-arrow-right"></i>
+            Logout
+        </div>
+        <div routerLink="/modificaprofilo">
+            Modifica Profilo
+        </div>
+    </mat-menu>
+    <button class="btn btn-warning" style="float: right;" [matMenuTriggerFor]="menu">
+        <i class="bi bi-list"></i>
+    </button>
+
 </div>

@@ -40,7 +40,7 @@
             <img [src]="'https://picsum.photos/800/800?random='+post.id">
         </div>
     </div>
-    <div>
+    <div> <!-- footer del post / qui mettiamo i bottoni -->
         <app-reactions
             [post]="post"
         ></app-reactions>
@@ -48,5 +48,9 @@
             [post]="post"
         >
         </app-bottonecommenti>
+        <app-condividi
+            [post]="post"    
+        >
+        </app-condividi>
     </div>
 </div>

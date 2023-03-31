@@ -10,6 +10,9 @@ export class LocalstorageService {
   
   constructor() { }
   
+  rimuoviUtente(){
+    localStorage.removeItem(this.KEY_UTENTE)
+  }
   
   leggiRicerca(): string[] {
     var temp = localStorage.getItem(this.KEY_RICERCA)

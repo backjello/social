@@ -16,7 +16,7 @@ export class PostComponent implements OnInit {
   @Input() indice!: number // indice del post nell'array posts del componente padre
 
   @Input() post!: Post // tutti i dati del post
-  // immmagine e username utente
+  // immagine e username utente
   img!: string
   username!: string
 
