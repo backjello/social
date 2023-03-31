@@ -3,18 +3,10 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 @Directive({
   selector: '[appEvidenziaricerca]'
 })
-export class EvidenziaricercaDirective implements OnInit {
+export class EvidenziaricercaDirective {
 
-  @Input() appEvidenziaricerca : string =""
+  @Input() appEvidenziaricerca : string = ""
 
   constructor(private elem:ElementRef) { }
-  
-  ngOnInit(): void {
-    console.log(this.elem.nativeElement.innerHTML)
-  }
-
-  
-
-
 
 }
