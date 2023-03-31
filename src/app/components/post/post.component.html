@@ -10,9 +10,9 @@
         (postModificato)="modifica($event)"
     ></app-headerpost>
     <!-- titolo post -->
-    <div appEvidenziaricerca >{{post.title}}</div>
+    <div [appEvidenziaricerca]="ricercaService.ricerca" >{{post.title}}</div>
     <!-- body post -->
-    <div appEvidenziaricerca >{{post.body}}</div>
+    <div [appEvidenziaricerca]="ricercaService.ricerca" >{{post.body}}</div>
     <!-- tag post -->
     <app-posttag
         [post]="post"

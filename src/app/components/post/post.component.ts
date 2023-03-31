@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Post } from 'src/app/interface/post';
 import { Utente } from 'src/app/interface/utente';
 import { ApiService } from 'src/app/services/api.service';
+import { RicercaService } from 'src/app/services/ricerca.service';
 
 @Component({
   selector: 'app-post',
@@ -20,7 +21,7 @@ export class PostComponent implements OnInit {
   @Output() postEliminato: EventEmitter<number> = new EventEmitter()
   @Output() postModificato: EventEmitter<Post> = new EventEmitter()
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, public ricercaService:RicercaService) {
   }
 
   ngOnInit(): void {
