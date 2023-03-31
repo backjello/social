@@ -12,7 +12,9 @@
     <!-- titolo post -->
     <div [appEvidenziaricerca]="ricercaService.ricerca" >{{post.title}}</div>
     <!-- body post -->
-    <div [appEvidenziaricerca]="ricercaService.ricerca" >{{post.body}}</div>
+    <div [appEvidenziaricerca]="ricercaService.ricerca" >
+        {{ post.body | riducitesto }} 
+    </div>
     <!-- tag post -->
     <app-posttag
         [post]="post"

@@ -1,3 +1,4 @@
-<span *ngFor="let tag of post.tags" class="tag" appEvidenziaricerca>
+<span *ngFor="let tag of post.tags" class="tag" 
+    [appEvidenziaricerca]="ricercaService.ricerca">
     #{{ tag }}
 </span>

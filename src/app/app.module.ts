@@ -34,6 +34,7 @@ import { BarraricercaComponent } from './components/barraricerca/barraricerca.co
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { EvidenziaricercaDirective } from './directives/evidenziaricerca.directive';
+import { RiducitestoPipe } from './pipes/riducitesto.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { EvidenziaricercaDirective } from './directives/evidenziaricerca.directi
     PopupNuovoPostComponent,
     PaginaPostComponent,
     BarraricercaComponent,
-    EvidenziaricercaDirective
+    EvidenziaricercaDirective,
+    RiducitestoPipe
   ],
   imports: [
     MatDialogModule,

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/interface/post';
+import { RicercaService } from 'src/app/services/ricerca.service';
 
 @Component({
   selector: 'app-posttag',
@@ -10,7 +11,7 @@ export class PosttagComponent implements OnInit {
 
   @Input() post! : Post
 
-  constructor() { }
+  constructor(public ricercaService:RicercaService) { }
 
   ngOnInit(): void {
   }
