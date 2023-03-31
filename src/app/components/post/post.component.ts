@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/interface/post';
 import { Utente } from 'src/app/interface/utente';
+import { PaginaPostComponent } from 'src/app/pages/pagina-post/pagina-post.component';
 import { ApiService } from 'src/app/services/api.service';
 import { RicercaService } from 'src/app/services/ricerca.service';
 
@@ -19,11 +21,19 @@ export class PostComponent implements OnInit {
   username!: string
 
   mostraAltro: boolean = false
+  immagineGrande: boolean = false
 
   @Output() postEliminato: EventEmitter<number> = new EventEmitter()
   @Output() postModificato: EventEmitter<Post> = new EventEmitter()
 
-  constructor(private api: ApiService, public ricercaService:RicercaService) {
+  constructor(private api: ApiService, public ricercaService:RicercaService,
+    private route:ActivatedRoute) {
+      // se sono nella pagina del post apro già la descrizione
+      // e mostro l'immagine grande
+      if(route.component == PaginaPostComponent){
+        this.mostraAltro = true
+        this.immagineGrande = true
+      }
   }
 
   ngOnInit(): void {

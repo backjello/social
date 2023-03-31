@@ -1,3 +1,10 @@
+.titolo{
+    font-size: 20px;
+    color: rgb(43, 128, 226);
+    padding-top: 5px;
+}
+
+
 .immagine-piccola{
     max-width: 200px;
 }

@@ -13,8 +13,8 @@
         <div class="col-8"> <!-- div di sinistra -->
             <!-- titolo post -->
             <div [appEvidenziaricerca]="ricercaService.ricerca"
-            [routerLink]="'/post/'+post.id">
-            {{post.title}}
+            [routerLink]="'/post/'+post.id" class="titolo">
+                {{post.title}}
             </div>
             <!-- body post -->
             <div [appEvidenziaricerca]="ricercaService.ricerca">
@@ -32,11 +32,11 @@
                 [post]="post"
             ></app-posttag>
         </div>
-        <div class="col-4" *ngIf="!immagineGrande">
+        <div class="col-4" *ngIf="!immagineGrande" (click)="immagineGrande=!immagineGrande">
             <img class="immagine-piccola" 
                 [src]="'https://picsum.photos/800/800?random='+post.id">
         </div>
-        <div *ngIf="immagineGrande">
+        <div *ngIf="immagineGrande" (click)="immagineGrande=!immagineGrande">
             <img [src]="'https://picsum.photos/800/800?random='+post.id">
         </div>
     </div>
