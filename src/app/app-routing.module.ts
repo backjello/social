@@ -21,6 +21,10 @@ const routes: Routes = [ // tutte le 'pagine' disponibili nel sito
   {
     path:'post/:id',
     component:PaginaPostComponent
+  },
+  {
+    path:'',
+    component:HomeComponent
   }
 ];
 

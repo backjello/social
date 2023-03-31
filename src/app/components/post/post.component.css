@@ -1,0 +1,11 @@
+.immagine-piccola{
+    max-width: 200px;
+}
+
+.click{
+    cursor: pointer;
+    color:blue;
+}
+.click:hover{
+    text-decoration:underline
+}

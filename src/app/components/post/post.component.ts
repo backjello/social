@@ -18,6 +18,8 @@ export class PostComponent implements OnInit {
   img!: string
   username!: string
 
+  mostraAltro: boolean = false
+
   @Output() postEliminato: EventEmitter<number> = new EventEmitter()
   @Output() postModificato: EventEmitter<Post> = new EventEmitter()
 
