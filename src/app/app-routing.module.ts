@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ModificaprofiloComponent } from './pages/modificaprofilo/modificaprofilo.component';
 import { PaginaPostComponent } from './pages/pagina-post/pagina-post.component';
 import { ProfiloComponent } from './pages/profilo/profilo.component';
 
@@ -21,6 +22,10 @@ const routes: Routes = [ // tutte le 'pagine' disponibili nel sito
   {
     path:'post/:id',
     component:PaginaPostComponent
+  },
+  {
+    path:'modificaprofilo',
+    component:ModificaprofiloComponent
   },
   {
     path:'',

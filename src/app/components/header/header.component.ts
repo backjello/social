@@ -13,16 +13,19 @@ import { PopupNuovoPostComponent } from '../popup-nuovo-post/popup-nuovo-post.co
 export class HeaderComponent {
 
   utente:Utente 
+  utenteLoggato : boolean = false
 
   constructor(private storage:LocalstorageService, private dialog:MatDialog,
     private router:Router) { 
     this.utente = storage.leggiUtente()
+    if( this.utente.username != undefined ){ // utente = {} oppure utente = {id:...,username:...,}
+      this.utenteLoggato = true
+    }
   }
 
   logout(){
     this.storage.rimuoviUtente()
     this.router.navigate(['/login'])
-    
   }
 
   nuovoPost(){

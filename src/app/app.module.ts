@@ -38,6 +38,7 @@ import { RiducitestoPipe } from './pipes/riducitesto.pipe';
 import { CondividiComponent } from './components/condividi/condividi.component';
 import { PopupcondivisioneComponent } from './components/popupcondivisione/popupcondivisione.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { ModificaprofiloComponent } from './pages/modificaprofilo/modificaprofilo.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import {MatMenuModule} from '@angular/material/menu';
     EvidenziaricercaDirective,
     RiducitestoPipe,
     CondividiComponent,
-    PopupcondivisioneComponent
+    PopupcondivisioneComponent,
+    ModificaprofiloComponent
   ],
   imports: [
     MatMenuModule,

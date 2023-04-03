@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field>
+            <span>Username: </span>
+            <input matInput type="text" formControlName="username">
+        </mat-form-field>
+        <mat-form-field>
+            <span>Nome: </span>
+            <input matInput type="text" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <span>Cognome: </span>
+            <input matInput type="text" formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field>
+            <span>Email: </span>
+            <input matInput type="email" formControlName="email">
+        </mat-form-field>
+        <span>Genere: </span>
+        <span>M</span>
+        <input value="male" type="radio" formControlName="gender">
+        <span>F</span>
+        <input value="female" type="radio" formControlName="gender">
+        <input type="submit" class="btn btn-primary" >
+    </form>
+</div>

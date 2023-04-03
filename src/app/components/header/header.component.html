@@ -1,5 +1,6 @@
 <div class="p-2">
-    <app-intestazione
+    <app-intestazione 
+        *ngIf="utenteLoggato"
         [nome]="utente.username"
         [img]="utente.image"
         [id]="utente.id"

@@ -35,7 +35,11 @@ export class ApiService {
       { reactions: post.reactions } // body della richiesta
       )
     }
-    
+
+    getUtenti(){
+      return this.http.get<any>(this.API_URL + 'users')
+    }
+
     getUtente(id: number | string): Observable<any> {
       return this.http.get<any>(this.API_URL + 'user/' + id)
     }
