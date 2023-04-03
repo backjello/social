@@ -44,6 +44,10 @@ export class ApiService {
       return this.http.get<any>(this.API_URL + 'user/' + id)
     }
     
+    salvaUtente(utente:any){
+      return this.http.put<any>(this.API_URL + 'users/' + utente.id, utente )
+    }
+    
     getPostByIDutente(userID:number | string){
       return this.http.get<any>(this.API_URL + 'posts/user/' + userID)
     }

@@ -43,8 +43,17 @@ export class ModificaprofiloComponent {
     return false
   }
   submit() {
-    if(this.form.)//form non valida
+    if( !this.form.valid )//form non valida
       return
+    
+    else {
+      if(this.utenteEsistente() == false){
+        this.api.salvaUtente(this.form.value).subscribe((res)=>{
+          console.log(res);
+        })
+      }
+      
+    }    
   }
   
 
